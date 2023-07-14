@@ -42,6 +42,10 @@ app.post("/", (req, res) => {
   res.render("home.ejs", { homeContent: homeStartingContent, posts: posts });
 });
 
+app.get("/posts/:param", (req, res) => {
+  console.log(req.params.param);
+});
+
 app.listen(3000, function () {
   console.log("Server started on port 3000");
 });
