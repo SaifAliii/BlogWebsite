@@ -22,7 +22,7 @@ app.use(express.static("public"));
 const posts = [];
 
 app.get("/", (req, res) => {
-  res.render("home.ejs", { homeContent: homeStartingContent });
+  res.render("home.ejs", { homeContent: homeStartingContent, posts: posts });
 });
 
 app.get("/about", (req, res) => {
@@ -45,8 +45,9 @@ app.post("/", (req, res) => {
 
 app.get("/posts/:postTitle", (req, res) => {
   posts.forEach(function (post) {
-    if (_.lowerCase(post.title) == _.lowerCase(req.params.postTitle)) {
+    if (_.lowerCase(post.title) === _.lowerCase(req.params.postTitle)) {
       console.log("Match Found");
+      res.render("post.ejs", { post: post });
     }
   });
 });
