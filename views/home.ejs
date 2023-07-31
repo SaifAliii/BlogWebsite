@@ -1,11 +1,7 @@
-<%- include("header.ejs") %>
+<%- include("partials/header.ejs") %>
 <h1>Home</h1>
 
 <% if(locals.homeContent){ %>
     <p><%= homeContent%></p> 
-<% } if(locals.aboutContent){ %>
-    <p><%= aboutContent%></p>
-<% } if(locals.contactContent){ %>
-    <p><%=contactContent %></p>
 <% } %>
-<%- include("footer.ejs") %>
+<%- include("partials/footer.ejs") %>

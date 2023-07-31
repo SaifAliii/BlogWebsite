@@ -16,11 +16,26 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 app.get("/", (req, res)=>{
-  res.render("home.ejs", {homeContent: homeStartingContent, aboutContent: aboutContent, contactContent: contactContent});
+  res.render("home.ejs", {homeContent: homeStartingContent});
 })
 
+app.get("/about", (req, res)=>{
+  res.render("about.ejs", {aboutContent: aboutContent});
+})
 
+app.get("/contact", (req, res)=>{
+  res.render("contact.ejs", {contactContent: contactContent});
+})
 
+app.get("/compose", (req, res)=>
+{
+  res.render("compose.ejs");
+})
+
+app.post("/", (req, res)=>{
+  console.log(req.body["newPost"]);
+  res.render("compose.ejs");
+})
 
 
 
