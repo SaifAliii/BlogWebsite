@@ -9,7 +9,9 @@
         <h1><%= post.title%></h1>
         <% var body = post.body%>
         <% var subBody = body.substring(0, 100) + "..."; %>
-        <p><%= subBody %><p>
+        <p><%= subBody %><a href="/posts/<%= post.title %>">Read More</a><p>
+        
     <% }) %> 
 <% } %>
+
 <%- include("partials/footer.ejs") %>
