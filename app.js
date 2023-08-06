@@ -39,8 +39,7 @@ app.get("/compose", (req, res) => {
 app.post("/", (req, res) => {
   const post = { title: req.body.postTitle, body: req.body.postBody };
   posts.push(post);
-  console.log(posts);
-  res.render("home.ejs", { homeContent: homeStartingContent });
+  res.render("home.ejs", { homeContent: homeStartingContent, posts: posts });
 });
 
 app.listen(3000, function () {
