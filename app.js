@@ -45,10 +45,10 @@ app.post("/", (req, res) => {
 
 app.get("/posts/:postTitle", (req, res) => {
   posts.forEach(function (post) {
-    if (_.lowerCase(post.title) === _.lowerCase(req.params.postTitle)) {
-      console.log("Match Found");
-      res.render("post.ejs", { post: post });
-    }
+    // if (_.lowerCase(post.title) === _.lowerCase(req.params.postTitle)) {
+    //   console.log("Match Found");
+    // }
+    res.render("post.ejs", { post: post });
   });
 });
 
